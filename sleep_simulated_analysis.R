@@ -2,11 +2,10 @@
 library(survival)
 library(mstate)
 library(frailtyEM)
-source("cox_markov_test.R")
+source("cox_markov_test.R") 
 source("simulation_code.R")
 source("plotMarkovTest.R")
   
-
 set.seed(2072020)
 
 #Simulate the dataset
@@ -44,13 +43,6 @@ simdata <- collapse_data(simdata,times=seq(0,10,by=30/3600))
   
   simdata$offs1 <- fit1$frail[simdata$id] #Frailty for the 1->2 transition
   
-  #Fit a frailty model to the Non-REM -> Awake transition.
-  fit3 <- coxph(Surv(entry,exit,status)~frailty(id),control=coxph.control(timefix=TRUE),data=msdata,subset=(trans==3))
-  #w/0 frailty
-  fit3_0 <- coxph(Surv(entry,exit,status)~1,control=coxph.control(timefix=TRUE),data=msdata,subset=(trans==3),x=TRUE)
-  
-  simdata$offs3 <- fit3$frail[simdata$id] #Frailty for the 2->1 transition
-
   #Obtain the weights functions for the 1->2 transition
   owm1 <- weights_multiple(simdata,grid=tseq,from=1,to=2,min_time=0)
   opw_ind1 <- weights_matrix(simdata,grid=tseq,from=1,to=2,min_time=0,other_weights=list(function(x) mean(abs(x),na.rm=TRUE),function(x) max(abs(x),na.rm=TRUE)))
