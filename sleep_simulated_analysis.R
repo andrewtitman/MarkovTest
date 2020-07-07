@@ -2,7 +2,7 @@
 library(survival)
 library(mstate)
 library(frailtyEM)
-source("cox_markov_test.R") #Rename the function
+source("cox_markov_test.R")
 source("simulation_code.R")
 source("plotMarkovTest.R")
   
