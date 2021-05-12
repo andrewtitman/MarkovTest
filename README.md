@@ -1,5 +1,5 @@
 # MarkovTest
-Code associated with the paper "General Tests of the Markov Assumption in Multi-state Models", A.C. Titman and H.Putter, Biostatistics (To appear).
+Code associated with the paper "General Tests of the Markov Assumption in Multi-state Models", A.C. Titman and H.Putter, Biostatistics (DOI: 10.1093/biostatistics/kxaa030).
 
 The contents of the repository are as follows:
 
