@@ -9,3 +9,5 @@ sleep_simulated_analysis.pdf : Pdf document generated from the R Markdown worked
 simulation_code.R : Routines to simulate data of a similar form to the sleep behaviour dataset.
 cox_markov_test.R : General routines to implement the test of the Markov property for Markov and Cox-Markov multi-state models
 plotMarkovTest.R : Function to produce log-rank trace plots based on objects produced using the cox_markov_test function.
+
+Note that the functions for implementing the test have been incorporated into the mstate R package via the MarkovTest function.
